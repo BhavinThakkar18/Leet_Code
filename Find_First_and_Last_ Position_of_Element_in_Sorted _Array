@@ -1,0 +1,52 @@
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+        int l=0;
+        int lf=0;
+        int rf=0;
+        int r=nums.size()-1;
+        vector<int> ans;
+        if(nums.size()==0)
+        {
+            ans.push_back(-1);
+            ans.push_back(-1);
+            return ans;
+        }
+        if(nums.size()==1 & nums[0]==target)
+        {
+            ans.push_back(0);
+            ans.push_back(0);
+            return ans;
+        }
+        else
+        {
+            for(int i=0;i<nums.size();i++)
+            {   
+                if(nums[i]==target)
+                {
+                    if(lf!=1)
+                    {
+                        l=i;
+                        lf=1;
+                    }
+                }
+                if(nums[nums.size()-1-i]==target)
+                {
+                    if(rf!=1)
+                    {
+                        r=nums.size()-1-i;
+                        rf=1;
+                    }
+                }
+            }
+        }
+        if(r==nums.size()-1 & l==0 & rf==0)
+        {
+            l=-1;
+            r=-1;
+        }
+        ans.push_back(l);
+        ans.push_back(r);
+        return ans;
+    }
+};
