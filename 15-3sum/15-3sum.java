@@ -1,11 +1,12 @@
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
-        Arrays.sort(nums);
-        List<List<Integer>> ans_arr= new LinkedList();
+        Arrays.sort(nums); // sort the array
+        List<List<Integer>> ans_arr= new LinkedList(); //output 
         
-        for(int i=0;i<nums.length-2;i++)
+        // applying 2 sum on entire loop
+        for(int i=0;i<nums.length-2;i++) 
         {
-            if(i==0 || (i>0 && nums[i]!=nums[i-1]))
+            if(i==0 || (i>0 && nums[i]!=nums[i-1])) //skipping the duplicates
             {
                 int l = i+1;
                 int r= nums.length -1;
