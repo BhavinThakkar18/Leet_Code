@@ -16,16 +16,19 @@ class Solution {
         {
             return null;
         }
+        //find out the middle element
         while(fast!=null && fast.next!=null)
         {
             slow=slow.next;
             fast=fast.next.next;
         }
         ListNode prev=head;
+        //find out the prev of middle element
         while(prev.next!=slow)
         {
             prev=prev.next;
         }
+        //remove middle element
         prev.next=slow.next;
         slow.next=null;
         return head;
