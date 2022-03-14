@@ -1,13 +1,18 @@
 class Solution {
     public String simplifyPath(String path) {
+        //defining two stacks
         Stack<String> st = new Stack<>();
         Stack<String> reverse_st = new Stack<>();
+        
+        //intial ans string
         String ans="/";
+        
+        //spliting input strings
         String[] folders=path.split("/*/");
+        
         for(int i=1;i<folders.length;i++)
         {
-            // System.out.print(i);
-            // System.out.println(folders[i]);
+            //pop the element if we enocounter  /.. (parent folder)
             if(folders[i].equals(".."))
             {
                 if(!st.isEmpty())
@@ -15,6 +20,7 @@ class Solution {
                     st.pop();
                 }
             }
+            //skip if its current folder 
             else if(folders[i].equals("."))
             {
                 continue;
@@ -32,6 +38,7 @@ class Solution {
         {
             String temp = reverse_st.pop();
             ans+=temp;
+            
             if(reverse_st.size()>0)
             {
                 ans+="/";
