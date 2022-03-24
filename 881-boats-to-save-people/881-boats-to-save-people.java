@@ -5,11 +5,10 @@ class Solution {
         int ans=people.length;
         int i=0;
         int j=people.length-1;
-        while(i<j)
+        while(i<=j)
         {
             if(people[i]+people[j]<=limit)
             {
-                count++;
                 i++;
                 j--;
             }
@@ -17,7 +16,8 @@ class Solution {
             {
                 j--;
             }
+            count++;
         }
-        return ans-count;
+        return count;
     }
 }
