@@ -80,16 +80,19 @@ class GfG
 	        return head;
 	    }
 	    Node curr_node=head;
-	    while(curr_node.next!=null && curr_node!=null)
+	    Node next_node=head.next;
+	    while(curr_node!=null && next_node!=null)
 	    {
-	        if(curr_node.data==curr_node.next.data)
+	        if(curr_node.data==next_node.data)
 	        {
-	            curr_node.next=curr_node.next.next;
+	            curr_node.next=next_node.next;
 	        }
 	        else
 	        {
 	            curr_node=curr_node.next;
+	            
 	        }
+	        next_node=next_node.next;
 	    }
 	    return head;
     }
