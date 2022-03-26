@@ -3,7 +3,6 @@ class Solution {
         int i=0;
         int j=nums.length-1;
         int ans=-1;
-
         while(i<=j)
         {
             int m=(i+j)/2;
