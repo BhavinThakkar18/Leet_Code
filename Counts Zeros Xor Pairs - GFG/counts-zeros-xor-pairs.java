@@ -61,15 +61,21 @@ class Complete{
     // Function for finding maximum and value pair
     public static long calculate (int arr[], int n) {
         int count=0;
+        HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
         for(int i=0;i<n;i++)
         {
-            for(int j=i+1;j<n;j++)
+            if(map.containsKey(arr[i]))
             {
-                if((arr[i]^arr[j])==0)
-                {
-                    count++;
-                }
+                map.put(arr[i],map.get(arr[i])+1);
             }
+            else
+            {
+                map.put(arr[i],1);
+            }
+        }
+        for (Map.Entry entry : map.entrySet()) {
+            int x=(int)entry.getValue();
+            count+=(x*(x-1)/2);
         }
         return count;
     }
