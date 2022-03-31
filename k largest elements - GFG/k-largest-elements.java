@@ -32,20 +32,25 @@ public class Main {
 class Solution {
     int[] kLargest(int[] arr, int n, int k) {
         int[] ans = new int[k];
-        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder());
-        for(int i=0;i<arr.length;i++)
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+        for(int i=0;i<k;i++)
         {
             pq.add(arr[i]);
         }
-        int i=0;
-        while(k>0)
+        for(int i=k;i<n;i++)
         {
-            //System.out.print(pq.peek()+" ");
-            ans[i]=pq.poll();
-            k--;
-            i++;
+            if(pq.peek()<arr[i])
+            {
+                pq.poll();
+                pq.add(arr[i]);
+            }
         }
-        //System.out.println();
+        int i=k-1;
+       while(pq.isEmpty()==false)
+       {
+           ans[i]=pq.poll();
+           i--;
+       }
         return ans;
     }
 }
