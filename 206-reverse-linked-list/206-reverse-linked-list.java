@@ -17,7 +17,6 @@ class Solution {
             head.next=prev;
             prev=head;
             head=next_node;
-            
         }
         return prev;
     }
