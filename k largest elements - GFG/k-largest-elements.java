@@ -31,17 +31,21 @@ public class Main {
 
 class Solution {
     int[] kLargest(int[] arr, int n, int k) {
-        Arrays.sort(arr);
-        int[] ans =new int[k];
+        int[] ans = new int[k];
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder());
+        for(int i=0;i<arr.length;i++)
+        {
+            pq.add(arr[i]);
+        }
         int i=0;
-        int index=arr.length-1;
         while(k>0)
         {
-            ans[i]=arr[index];
-            index--;
-            i++;
+            //System.out.print(pq.peek()+" ");
+            ans[i]=pq.poll();
             k--;
+            i++;
         }
+        //System.out.println();
         return ans;
     }
 }
