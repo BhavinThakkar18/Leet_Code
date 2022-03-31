@@ -1,5 +1,5 @@
 # k largest elements
-## Medium 
+##  Medium 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">Given an array <strong>Arr</strong> of <strong>N</strong> positive integers, find&nbsp;<strong>K</strong> <strong>largest elements </strong>from the array.&nbsp; The output elements should be printed in decreasing order.</span></p>
 
