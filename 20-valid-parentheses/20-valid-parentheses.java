@@ -9,9 +9,12 @@ class Solution {
             else {
                 if(st.isEmpty())
                     return false;
-                char c = st.pop();
+                char c = st.peek();
                 if((ch == ')' && c == '(') || (ch == ']' && c == '[') || (ch == '}' && c == '{'))
+                {
+                    st.pop();
                     continue;
+                }
                 else
                     return false;
             }
