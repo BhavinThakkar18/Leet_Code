@@ -1,6 +1,6 @@
 class Solution {
     public int threeSumMulti(int[] arr, int target) {
-        int mod = 1000_000_007;
+        int mod = 1000000007;
         long result = 0;
         for(int i=0;i<arr.length;i++)
         {
