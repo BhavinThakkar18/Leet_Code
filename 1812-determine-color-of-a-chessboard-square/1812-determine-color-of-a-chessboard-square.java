@@ -17,14 +17,6 @@ class Solution {
                 }
             }
         }
-        // for(int i=0;i<8;i++)
-        // {
-        //     for(int j=0;j<8;j++)
-        //     {
-        //         System.out.print(mat[i][j]+" ");
-        //     }
-        //     System.out.println();
-        // }
         int col=coordinates.charAt(0)-'a';
         int row=coordinates.charAt(1)-'1';
         row=7-row;
