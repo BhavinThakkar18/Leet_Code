@@ -6,7 +6,6 @@ class Solution {
             if(n.charAt(i)-'0'==9)
             {
                ans=9;
-               break;
             }
             ans=Math.max(ans,n.charAt(i)-'0');
         }
