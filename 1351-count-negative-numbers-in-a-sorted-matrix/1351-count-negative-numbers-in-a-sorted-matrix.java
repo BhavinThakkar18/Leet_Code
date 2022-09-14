@@ -7,7 +7,7 @@ class Solution {
             {
                 if(grid[i][j]>=0)
                 {
-                    continue;
+                    break;
                 }
                 else
                 {
