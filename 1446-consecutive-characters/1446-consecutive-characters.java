@@ -5,25 +5,15 @@ class Solution {
         int ans=1;
         for(int i=1;i<s.length();i++)
         {
-            
-            if(stack.size()>0)
+            if(s.charAt(i)!=stack.peek())
             {
-                if(s.charAt(i)!=stack.peek())
+                while(!stack.isEmpty())
                 {
-                    while(!stack.isEmpty())
-                    {
-                        stack.pop();   
-                    }
+                    stack.pop();   
                 }
-                stack.push(s.charAt(i));
             }
-            else
-            {
-                stack.push(s.charAt(i));
-                
-            }
+            stack.push(s.charAt(i));
             ans=Math.max(ans,stack.size());
-            
         }
         return ans;
     }
