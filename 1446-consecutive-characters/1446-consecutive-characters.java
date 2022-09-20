@@ -8,19 +8,14 @@ class Solution {
             
             if(stack.size()>0)
             {
-                if(s.charAt(i)==stack.peek())
-                {
-                    stack.push(s.charAt(i));
-                
-                }
-                else
+                if(s.charAt(i)!=stack.peek())
                 {
                     while(!stack.isEmpty())
                     {
                         stack.pop();   
                     }
-                    stack.push(s.charAt(i));
                 }
+                stack.push(s.charAt(i));
             }
             else
             {
