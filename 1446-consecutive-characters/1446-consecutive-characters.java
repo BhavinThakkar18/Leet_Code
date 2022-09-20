@@ -11,7 +11,6 @@ class Solution {
                 if(s.charAt(i)==stack.peek())
                 {
                     stack.push(s.charAt(i));
-                    ans=Math.max(ans,stack.size());
                 
                 }
                 else
@@ -26,8 +25,9 @@ class Solution {
             else
             {
                 stack.push(s.charAt(i));
-                ans=Math.max(ans,stack.size());
+                
             }
+            ans=Math.max(ans,stack.size());
             
         }
         return ans;
