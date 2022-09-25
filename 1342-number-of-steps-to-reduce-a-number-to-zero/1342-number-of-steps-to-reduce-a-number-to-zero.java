@@ -5,14 +5,12 @@ class Solution {
         {
             if((num&1)==0)
             {
-                num=num>>1;
-                
+                num>>=1;
             }
             else
             {
-                num-=1;
+                num--;
             }
-            //System.out.println(num);
             count++;
         }
         return count;
