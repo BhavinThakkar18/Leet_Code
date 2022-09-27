@@ -8,7 +8,6 @@ class Solution {
         while(start<=end)
         {
             int mid = start + (end-start)/2;
-            int copy=mid;
             if(nums[mid]==target)
             {
                 while(mid>0 && nums[mid-1]==target)
