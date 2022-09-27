@@ -19,12 +19,11 @@ class Solution {
                     }
                     mid--;   
                 }
-                mid=copy;
                 if(!ans.contains(mid))
                 {
                     ans.add(mid);
                 }
-                mid=copy;
+                
                 while(mid<nums.length-1 && nums[mid+1]==target)
                 {
                     if(!ans.contains(mid+1))
