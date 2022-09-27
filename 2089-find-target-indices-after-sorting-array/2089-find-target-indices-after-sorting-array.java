@@ -8,6 +8,7 @@ class Solution {
         while(start<=end)
         {
             int mid = start + (end-start)/2;
+            int copy=mid;
             if(nums[mid]==target)
             {
                 while(mid>0 && nums[mid-1]==target)
@@ -18,11 +19,12 @@ class Solution {
                     }
                     mid--;   
                 }
+                mid=copy;
                 if(!ans.contains(mid))
                 {
                     ans.add(mid);
                 }
-                
+                mid=copy;
                 while(mid<nums.length-1 && nums[mid+1]==target)
                 {
                     if(!ans.contains(mid+1))
